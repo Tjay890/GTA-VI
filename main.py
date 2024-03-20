@@ -98,10 +98,10 @@ world = {
   "Airport" : {
     "transitions" : {
       "right" : "Barber",
-      "left" : "Cayo perigo"
+      "left" : "Cayo perico"
     }
   },
-  "cayo perigo" : {
+  "cayo perico" : {
     "transitions" : {
       "right" : "Airport"
     }
