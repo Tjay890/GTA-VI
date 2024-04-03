@@ -34,10 +34,6 @@ import wereld
 # class Armor(Item):
 #   pass
 
-
-
-
-    
 # house = House("House", "-", "-", "beach" , "homie's crip")
 # beach = location("Beach", "house", "-", "-", "-")
 # homiescrip = location("Homies crip", "nightclub", "freakshop", "barber", "house")
@@ -47,7 +43,6 @@ import wereld
 # print(current)
 # house.printdirections()
 # house.move(current)
-
 
 # world = {
 #   "House" : {
