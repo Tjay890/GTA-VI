@@ -1,4 +1,7 @@
-import pygame, random
+import wereld
+
+
+# import locations.world 
 
 # from pygame.constants import KEYDOWN
 
@@ -35,75 +38,80 @@ import pygame, random
 
 
     
-house = House("House", "-", "-", "beach" , "homie's crip")
-beach = location("Beach", "house", "-", "-", "-")
-homiescrip = location("Homies crip", "nightclub", "freakshop", "barber", "house")
-nightclub = location("Nightclub", "-", "casino", "homie's crip", "-")
+# house = House("House", "-", "-", "beach" , "homie's crip")
+# beach = location("Beach", "house", "-", "-", "-")
+# homiescrip = location("Homies crip", "nightclub", "freakshop", "barber", "house")
+# nightclub = location("Nightclub", "-", "casino", "homie's crip", "-")
 
-current = house
-print(current)
-house.printdirections()
-house.move(current)
+# current = house
+# print(current)
+# house.printdirections()
+# house.move(current)
 
-world = {
-  "House" : {
-    "transitions": {
-      "down" : "Beach",
-      "right" : "homie's crip"
-    }
-  },
-  "Beach" : {
-    "transitions" : {
-      "up" : "House"
-    }
-  },
-  "Homie's crip" : {
-    "transitions" : {
-      "left" : "House",
-      "down" : "Barber",
-      "right" : "Freakshop",
-      "up" : "Nightclub"
-    }
-  },
-  "Nightclub" : {
-    "transitions" : {
-      "down" : "Homie's crip",
-      "right" : "Casino"
-    }
-  },
-  "Casino" : {
-    "transitions" : {
-      "left" : "Nightclub",
-      "down" : "Freakshop"
-    }
-  },
-  "Freakshop" : {
-    "transitions" : {
-      "left" : "Homie's crip",
-      "up" : "Casino"
-    }
-  },
-  "Barber" : {
-    "transitions" : {
-      "up" : "Homie's crip",
-      "down" : "Docks",
-      "left" : "Airport"
-    }
-  },
-  "Docks" : {
-    "transitions" : {
-      "up" : "Barber"
-    }
-  },
-  "Airport" : {
-    "transitions" : {
-      "right" : "Barber",
-      "left" : "Cayo perigo"
-    }
-  },
-  "cayo perigo" : {
-    "transitions" : {
-      "right" : "Airport"
-    }
-  }
-}
+
+# world = {
+#   "House" : {
+#     "transitions": {
+#       "down" : "Beach",
+#       "right" : "homie's crip"
+#     }
+#   },
+#   "Beach" : {
+#     "transitions" : {
+#       "up" : "House"
+#     }
+#   },
+#   "Homie's crip" : {
+#     "transitions" : {
+#       "left" : "House",
+#       "down" : "Barber",
+#       "right" : "Freakshop",
+#       "up" : "Nightclub"
+#     }
+#   },
+#   "Nightclub" : {
+#     "transitions" : {
+#       "down" : "Homie's crip",
+#       "right" : "Casino"
+#     }
+#   },
+#   "Casino" : {
+#     "transitions" : {
+#       "left" : "Nightclub",
+#       "down" : "Freakshop"
+#     }
+#   },
+#   "Freakshop" : {
+#     "transitions" : {
+#       "left" : "Homie's crip",
+#       "up" : "Casino"
+#     }
+#   },
+#   "Barber" : {
+#     "transitions" : {
+#       "up" : "Homie's crip",
+#       "down" : "Docks",
+#       "left" : "Airport"
+#     }
+#   },
+#   "Docks" : {
+#     "transitions" : {
+#       "up" : "Barber"
+#     }
+#   },
+#   "Airport" : {
+#     "transitions" : {
+#       "right" : "Barber",
+#       "left" : "Cayo perigo"
+#     }
+#   },
+#   "cayo perigo" : {
+#     "transitions" : {
+#       "right" : "Airport"
+#     }
+#   }
+# }
+
+current = wereld.move("House")
+while True:
+  current = wereld.move(current)
