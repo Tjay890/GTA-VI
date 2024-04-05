@@ -23,8 +23,6 @@ WHITE = (200, 200, 200)
 WINDOW_HEIGHT = 800
 WINDOW_WIDTH = 800
 
-#location =  [[546, 200], [436, 184], [501, 279], [439, 450], [392, 318], [188, 369], [556, 662], [234, 262], [270, 573], [114, 454]]
-
 player_image = pygame.image.load("Head.jpg")
 player_rect = player_image.get_rect()
 
