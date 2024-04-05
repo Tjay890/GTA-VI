@@ -1,11 +1,11 @@
 from location import *
 import pygame
-
+from player import *
 class Barber(Location):
   hair = "YEYEASSHAIRCUT"
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
-
+    
   def enter(self):
     print("You are going inside.")
     self.hair = self.hairstyle()
