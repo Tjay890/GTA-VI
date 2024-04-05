@@ -7,7 +7,7 @@ from pygame.constants import KEYDOWN
 pygame.init()
 
 #startvariablen
-bord = pygame.image.load("LS_Map(met lijntjes).jpg")
+bord = pygame.image.load("Bord.jpg")
 bordrect = bord.get_rect()
 
 WINDOW_SIZE= [800, 800]
