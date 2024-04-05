@@ -9,7 +9,7 @@ class Barber(Location):
 
   def enter(self):
     print("You are going inside.")
-    self.hair = hairstyle()
+    self.hair = self.hairstyle()
 
   def hairstyle(self):
     print("Do want a haircut ma G?\nYou aint looking fresh with that",self.hair,"!")
