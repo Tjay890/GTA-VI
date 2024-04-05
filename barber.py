@@ -1,12 +1,18 @@
 from location import *
-
-
-
-
-class Haircut:
   
-  def hairstyle(hair):
-    print("Do want a haircut ma G?\nYou aint looking fresh with that",hair,"!")
+
+
+class Barber(Location):
+  hair = "YEYEASSHAIRCUT"
+  def __init__(self, name, up, right, down, left, xcoord, ycoord):
+    super().__init__(name, up, right, down, left, xcoord, ycoord)
+
+  def enter(self):
+    print("You are going inside.")
+    self.hair = hairstyle()
+
+  def hairstyle(self):
+    print("Do want a haircut ma G?\nYou aint looking fresh with that",self.hair,"!")
     a = input(">")
     if a.lower() == "no":
       hair = "YEYEASSHAIRCUT"
@@ -28,15 +34,4 @@ class Haircut:
       print("Yo hairstyle is now", hair, "N***a!")
       print("")
       return hair
-  
-
-
-class Barber(Location):
-  hair = "YEYEASSHAIRCUT"
-  def __init__(self, name, up, right, down, left, xcoord, ycoord):
-    super().__init__(name, up, right, down, left, xcoord, ycoord)
-
-  def enter(self):
-    print("You are going inside.")
-    self.hair = Haircut.hairstyle(self.hair)
     
