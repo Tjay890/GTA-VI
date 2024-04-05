@@ -9,6 +9,8 @@ from docks import *
 from freakshop import *
 from homiescrip import *
 from nightclub import *
+
+
 def move(current):
   objHere = world[current]
   objHere.printdirections()
@@ -29,6 +31,9 @@ def move(current):
   elif direction == keys.LEFT:
     if objHere.left != "-":
       current = objHere.left
+  elif direction == keys.ENTER:
+    print("enter")
+    objHere.enter()
   else:
     print("You can't go there!")
   return current
