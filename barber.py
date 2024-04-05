@@ -23,8 +23,8 @@ class haircut:
         hair = str(input(">"))
       return hair
 
-  hairshit = hairstyle()
-  print("Yo hairstyle is now", hairshit, "N***a!")
+  hairthing = hairstyle()
+  print("Yo hairstyle is now", hairthing, "N***a!")
 
 
 class Barber(Location):
