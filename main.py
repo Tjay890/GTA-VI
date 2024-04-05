@@ -37,14 +37,17 @@ def drawGrid():
               pygame.draw.rect(screen, WHITE, rect, 1)
 
 while not done:
-      screen.fill((255,255,255))
-      player_rect.center = bordrect.center
-      screen.blit(bord, bordrect)
-      screen.blit(player_image, player_rect)
-      clock.tick(60)
-      pygame.display.flip()
-      current = wereld.move(current)
-      print(wereld.world[current].x)
+  player_x = wereld.world[current].x
+  player_y = wereld.world[current].y
+  screen.fill((255,255,255))
+  player_rect.center = bordrect.center
+  screen.blit(bord, bordrect)
+  player_rect.center = (player_x, player_y)
+  screen.blit(player_image, player_rect)
+  clock.tick(60)
+  pygame.display.flip()
+  current = wereld.move(current)
+
 
 
 

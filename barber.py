@@ -20,11 +20,13 @@ class Haircut:
       while (hair != "Buzz" and hair != "Fringe" and hair != "Mullet"
              and hair != "Bold" and hair != "Default"):
         print("You cannot chose that n***a !\nChoose again!")
+        print("")
         print("Wich haircut do you want ma n***a!")
         print("You can chose between these 5 n***a!")
         print("Buzz, Fringe, Mullet, Bold or Default")
         hair = str(input(">"))
       print("Yo hairstyle is now", hair, "N***a!")
+      print("")
       return hair
   
 
