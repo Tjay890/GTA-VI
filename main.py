@@ -44,7 +44,7 @@ while not done:
       clock.tick(60)
       pygame.display.flip()
       current = wereld.move(current)
-      
+      print(wereld.world[current].x)
 
 
 
