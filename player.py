@@ -5,7 +5,7 @@ import random
 class Stats:
   cookies1 = 0
   gun1 = 0
-  cash = 0
+  cash = 100
   
   def __init__(self, health = 80, power = 15):
     self.life = health
