@@ -1,12 +1,12 @@
 class Location():
-  def __init__(self, name, up, right ,down, left):
+  def __init__(self, name, up, right ,down, left, xcoord, ycoord):
     self.name = name
     self.up = up
     self.right = right
     self.down = down
     self.left = left
-    # self.x = xcoord
-    # self.y = ycoord
+    self.x = xcoord
+    self.y = ycoord
   def printdirections(self):
     print("You are currently at " + self.name)
     print("You can enter this place by pressing [ENTER] or,")
