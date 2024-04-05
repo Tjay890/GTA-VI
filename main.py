@@ -1,10 +1,15 @@
 import wereld
 import pygame
+from pygame import mixer
 
 from pygame.constants import KEYDOWN
 
 #game door Maarten, Jonathan en Tije
 pygame.init()
+
+mixer.init()
+mixer.music.load('Music.mp3')
+mixer.music.play(-1)
 
 #startvariablen
 bord = pygame.image.load("Bord.jpg")
