@@ -8,28 +8,28 @@ class Casino_games():
   #geheim pinapparaat waar je je cash kan opladen
   def pinapparaat():
     print("This is the secret ATM you can withdraw any amount of money you want")
-    print("You have", Stats.cash,"money.")
+    print("You have", player.cash,"money.")
     extra = int(input("How much money do you want?"))
-    Stats.cash += extra
+    player.cash += extra
   
   @staticmethod
   #Kop of munt minigame
   def coinflip():
-    print("You have", Stats.cash, "money.")
+    print("You have", player.cash, "money.")
     #inzet
     bet = input("How much do you want to bet. (Type a number or all in)\n")
     #kijken of je all in doet en anders je inzet in een nummer veranderen
     if bet == "all in":
-      bet = Stats.cash
+      bet = player.cash
     else:
       bet = int(bet)
       #checken of je inzet niet meer is dan je hebt
-      while bet > Stats.cash:
+      while bet > player.cash:
         print("You dont have that much money.")
         bet = input("How much do you want to bet. (Type a number or all in)\n")
     
     #geld dat je ingezet hebt van je totale geld afhalen
-    Stats.cash -= bet
+    player.cash -= bet
     
     print("heads or tails?")
     
@@ -41,9 +41,9 @@ class Casino_games():
     coin = random.randint(0,1)
     #checken of jouw keuze gelijk is aan wat de uitkomst was
     if (choise == "heads" and coin == 0) or (choise == "tails" and coin == 1):
-      Stats.cash += bet*2
+      player.cash += bet*2
       print("You win your money is doubled.")
-      print("You now have",Stats.cash,"money.")
+      print("You now have",player.cash,"money.")
     else:
       print("Your lose")
       
@@ -53,7 +53,7 @@ class Casino_games():
   def roulette():
     exit = False
     while exit is False:  
-        print('Place your bet! ',Stats.cash,'bucks!', '''
+        print('Place your bet! ',player.cash,'bucks!', '''
     =======================================
     1. Bet on Red (pays 1:1)
     2. Bet on Black (pays 1:1)
@@ -66,7 +66,7 @@ class Casino_games():
         menuChoice = int(input())
         #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-        if Stats.cash > 0 and menuChoice != 7: #Determine if quit or broke
+        if player.cash > 0 and menuChoice != 7: #Determine if quit or broke
             if menuChoice == 6:
                 number = int(input('Please choose a number from 0-36!')) #Get their specific number
                 while number < 0 or number > 36: #Validation
@@ -75,7 +75,7 @@ class Casino_games():
 
             wager = int(input('How much would you like to bet? '))
             #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            while wager > Stats.cash:
+            while wager > player.cash:
               print("You dont have that much money.")
               wager = int(input("How much would you like to bet?"))
               
@@ -135,13 +135,13 @@ class Casino_games():
                 print(amount)
 
             if winner == True:
-                Stats.cash += amount #<~~~~~~~~~~~~~Problem Area
+                player.cash += amount #<~~~~~~~~~~~~~Problem Area
                 print('Congratulations! You won', wager,'dollars!')
-                print('Your total is now :',Stats.cash,'dollars.')
+                print('Your total is now :',player.cash,'dollars.')
             else:
-                Stats.cash -= wager
+                player.cash -= wager
                 print('Sorry! You lost',wager,'dollars. Better luck next time!')
-                print('Your total is now :',Stats.cash,'dollars.')
+                print('Your total is now :',player.cash,'dollars.')
 
             input('Press a key to go back to the menu!')
 
@@ -166,7 +166,7 @@ class Casino_games():
     
     while exit is False:
       
-      print("you have", Stats.cash, "cash")
+      print("you have", player.cash, "cash")
       print("You have 1 game you can play.")
       print("""Our current games that are available are:
       1. Heads or Tails.
