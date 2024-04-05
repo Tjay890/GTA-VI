@@ -1,9 +1,17 @@
 from location import *
 import pygame
-class Haircut:
 
-  def hairstyle(hair):
-    print("Do want a haircut ma G?\nYou aint looking fresh with that", hair, "!")
+class Barber(Location):
+  hair = "YEYEASSHAIRCUT"
+  def __init__(self, name, up, right, down, left, xcoord, ycoord):
+    super().__init__(name, up, right, down, left, xcoord, ycoord)
+
+  def enter(self):
+    print("You are going inside.")
+    self.hair = self.hairstyle()
+
+  def hairstyle(self):
+    print("Do want a haircut ma G?\nYou aint looking fresh with that",self.hair,"!")
     a = input(">")
     if a.lower() == "no":
       hair = "YEYEASSHAIRCUT"
@@ -25,15 +33,15 @@ class Haircut:
       print("Yo hairstyle is now", hair, "N***a!")
       print("")
       if hair == "Buzz":
-        Haircut.display_image('Buzz.jpg')
+        self.display_image('Buzz.jpg')
       if hair == "Fringe":
-        Haircut.display_image('Fringe.jpg')
+        self.display_image('Fringe.jpg')
       if hair == "Mullet":
-        Haircut.display_image('Mullet.jpg')
+        self.display_image('Mullet.jpg')
       if hair == "Bold":
-        Haircut.display_image('Bold.jpg')
+        self.display_image('Bold.jpg')
       if hair == "Default":
-        Haircut.display_image('Default.jpg')
+        self.display_image('Default.jpg')
       return hair
   @staticmethod
   def display_image(image_name):
@@ -45,10 +53,3 @@ class Haircut:
     pygame.time.delay(2000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
-class Barber(Location):
-  hair = "YEYEASSHAIRCUT"
-  def __init__(self, name, up, right, down, left, xcoord, ycoord):
-    super().__init__(name, up, right, down, left, xcoord, ycoord)
-  def enter(self):
-    print("You are going inside.")
-    self.hair = Haircut.hairstyle(self.hair)
