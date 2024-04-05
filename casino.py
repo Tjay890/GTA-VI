@@ -1,5 +1,6 @@
 from location import *
 import random
+import math
 from player import *
 
 class Casino_games():
@@ -48,13 +49,118 @@ class Casino_games():
       
     
   @staticmethod
-  #roulette spel
+  #roulette spel met dank aan https://stackoverflow.com/questions/52828074/roulette-program-adding-up-the-cash en nog een beetje aangepast zodat het werkt met onze code
   def roulette():
-    print("roulette shit")
+    exit = False
+    while exit is False:  
+        print('Place your bet! ',Stats.cash,'bucks!', '''
+    =======================================
+    1. Bet on Red (pays 1:1)
+    2. Bet on Black (pays 1:1)
+    3. First 12 (pays 2:1)
+    4. Middle 12 (pays 2:1)
+    5. Last 12 (pays 2:1)
+    6. Choose any number (pays 35:1)
+    7. Cash out
+    Please enter your choice: ''')
+        menuChoice = int(input())
+        #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        if Stats.cash > 0 and menuChoice != 7: #Determine if quit or broke
+            if menuChoice == 6:
+                number = int(input('Please choose a number from 0-36!')) #Get their specific number
+                while number < 0 or number > 36: #Validation
+                    number = int(input('Please enter a number from 0-36'))
+
+
+            wager = int(input('How much would you like to bet? '))
+            #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            while wager > Stats.cash:
+              print("You dont have that much money.")
+              wager = int(input("How much would you like to bet?"))
+              
+              
+              
+            print('Press any key to spin the wheel! ')
+            input()
+            print(menuChoice, wager)
+    ##
+            ball = random.randint(0,36)
+
+
+            if ball == 0:
+                color = ('green')
+            elif ball % 2 == 0:
+                color = ('black')
+            else:
+                color = ('red')
+
+            print('Your ball was',ball, 'and landed on the color',color)
+
+            #Determine if winner
+            if menuChoice == 1 and color == 'red':
+                winner = True
+                odds = 1
+
+            elif menuChoice == 2 and color == 'black':
+                winner = True
+                odds = 1
+
+            elif menuChoice == 3 and ball >= 1 and ball <= 12 :
+                winner = True
+                odds = 2
+
+            elif menuChoice == 4 and ball >= 13 and ball  <= 24:
+                winner = True
+                odds = 2
+
+            elif menuChoice == 5 and ball >= 25 and ball  <= 36:
+                winner = True
+                odds = 2
+
+            elif menuChoice == 6 and ball == number:
+                winner = True
+                odds = 35
+
+            else:
+                winner = False
+                odds = 0
+
+                #End determine if winner
+
+            if odds == 0:
+                pass
+            else:
+                amount = wager * odds   #Get amount won/lost
+                print(amount)
+
+            if winner == True:
+                Stats.cash += amount #<~~~~~~~~~~~~~Problem Area
+                print('Congratulations! You won', wager,'dollars!')
+                print('Your total is now :',Stats.cash,'dollars.')
+            else:
+                Stats.cash -= wager
+                print('Sorry! You lost',wager,'dollars. Better luck next time!')
+                print('Your total is now :',Stats.cash,'dollars.')
+
+            input('Press a key to go back to the menu!')
+
+            print('====================================================================')
+
+            #New round
+
+
+
+
+
+        else:
+            print('Thank you for playing! ')
+            exit = True
   
   @staticmethod
   #binnenkomst bij casino
   def entrance():
+    #zorgen dat je in het casino blijft
     exit = False
     print("Welcome to the ls casino")
     
@@ -65,9 +171,11 @@ class Casino_games():
       print("""Our current games that are available are:
       1. Heads or Tails.
       2. Roulette.
+      3. Exit.
       """)
       
       choise = input("Choose your game. (press 1 or 2)\n")
+      #check welke minigame je gaat doen
       if choise == "1":
         Casino_games.coinflip()
       elif choise == "2":
