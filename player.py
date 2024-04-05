@@ -1,13 +1,11 @@
 #Player stats
 import random
 
-cookies1 = 0
-gun1 = 0
-cash = 0
-
 
 class Stats:
-
+  cookies1 = 0
+  gun1 = 0
+  cash = 0
   
   def __init__(self, health = 80, power = 15):
     self.life = health
@@ -31,8 +29,8 @@ class Stats:
 
 class Player(Stats):
 
-  cookies = cookies1
-  gunna = gun1
+  cookies = Stats.cookies1
+  gunna = Stats.gun1
   
   def __init__(self, health = 100, power = 20):
     Stats.__init__(self, health = 80, power = 15)
