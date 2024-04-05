@@ -33,11 +33,11 @@ player_rect = player_image.get_rect()
 
 
 def drawGrid():
-      blockSize = 20 #Set the size of the grid block
-      for x in range(0, WINDOW_WIDTH, blockSize):
-          for y in range(0, WINDOW_HEIGHT, blockSize):
-              rect = pygame.Rect(x, y, blockSize, blockSize)
-              pygame.draw.rect(screen, WHITE, rect, 1)
+  blockSize = 20 #Set the size of the grid block
+  for x in range(0, WINDOW_WIDTH, blockSize):
+    for y in range(0, WINDOW_HEIGHT, blockSize):
+      rect = pygame.Rect(x, y, blockSize, blockSize)
+      pygame.draw.rect(screen, WHITE, rect, 1)
 
 while not done:
   player_x = wereld.world[current].x
