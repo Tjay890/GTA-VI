@@ -1,4 +1,5 @@
 import random
+import pygame
 
 class Stats:
   cookies1 = 0
@@ -77,6 +78,7 @@ class Player(Stats):
       print("My health is:", self.life)
     else:
       print("Yoo ass is dead G!")
+      pygame.quit()
 
 
   def heal(self):

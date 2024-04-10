@@ -42,6 +42,9 @@ class Beach(Location):
         self.display_image('Asian.jpg')
         self.play_sound('Indian.mp3')
         self.display_image('Indian.jpg')
+        print('It was a man and he f*cked you in the ass')
+        print('You died')
+        pygame.quit()
       elif girl == "Blacka":
         self.display_image('Blacka.jpg')
       return girl
@@ -52,7 +55,7 @@ class Beach(Location):
     Cut = pygame.image.load(image_name).convert()
     screen.blit(Cut, (0, 0))
     pygame.display.flip()
-    pygame.time.delay(4000)
+    pygame.time.delay(2000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
   @staticmethod
