@@ -29,10 +29,13 @@ class Stats:
 
 
 class Player(Stats):
-
+  hair = "YEYEASSHAIRCUT"
+  driver = "No one"
   cookies = Stats.cookies1
   gunna = Stats.gun1
   rpg = Stats.rpg1
+  
+  
   def __init__(self, health = 100, power = 20):
     Stats.__init__(self, health = 80, power = 15)
 

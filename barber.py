@@ -3,16 +3,16 @@ import pygame
 from player import *
 
 class Barber(Location):
-  hair = "YEYEASSHAIRCUT"
+  player.hair = "YEYEASSHAIRCUT"
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
     
   def enter(self):
     print("You are going inside.")
-    self.hair = self.hairstyle()
+    player.hair = self.hairstyle()
 
   def hairstyle(self):
-    print("Do want a haircut ma G?\nYou aint looking fresh with that",self.hair,"!")
+    print("Do want a haircut ma G?\nYou aint looking fresh with that",player.hair,"!")
     a = input(">")
     if a.lower() == "no":
       hair = "YEYEASSHAIRCUT"
@@ -54,3 +54,6 @@ class Barber(Location):
     pygame.time.delay(2000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
+
+
+
