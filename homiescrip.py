@@ -43,6 +43,7 @@ class Crip(Location):
       print("Tyrone: Come back when you have the money G.")
   def joints(self):
     print("Tyrone: The joints are 100 cash a piece")
+    print("You currently have",player.cash,"cash.")
     print("Tyrone: How much joints do you want?")
     junta = int(input())
     if junta == 0:

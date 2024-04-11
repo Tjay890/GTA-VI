@@ -61,4 +61,5 @@ class Cayo(Location):
     else:
       print(" Demarcus has won with ", player.life, "lifes.")
       player.cash += 5000
+      print("You earned 5000 cash")
       print("Your cash is now:", player.cash)
