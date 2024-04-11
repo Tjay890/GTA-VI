@@ -14,7 +14,7 @@ class Docks(Location):
     input()
     self.check()
 
-
+  #wanneer je binnekomt
   def check(self):
     if player.crowbar == 1:
       print("You wanna do the heist ma guy?")
@@ -27,7 +27,7 @@ class Docks(Location):
       self.dockies()
         
       
-
+  
   def docksheist(self):
     print("------------------------------")
     print("Construction Worker: Move yo ass out a here n***a!")
@@ -44,6 +44,7 @@ class Docks(Location):
     print("------------------------------")
     print("You see 3 containers.")
     print("The containers have random shit.\n Choise container 1, 2 or 3.")
+    #laad de inhoud van de containers
     self.container = int(input(">"))
     self.rightcontainer = random.randint(1,3)
     self.chineescontainer = random.randint(1,3)
@@ -62,7 +63,7 @@ class Docks(Location):
     else:
       print("Shit, the container is empty, get yo ass in the car.")
       self.policechase()
-
+  #je getaway driver
   def policechase(self):
     print("The police are comming quick go!")
     if player.driver == "1":
@@ -75,6 +76,7 @@ class Docks(Location):
       print("Yo ass ain't got no driver, you gotta run now.")
       getaway = 3
       print("You better choose a driver at the freakshop next time.")
+    #je prijs
     if getaway == 1 and self.container == self.rightcontainer:
       print("Yo escaped the police")
       print("Heist is completed")
@@ -98,6 +100,7 @@ class Docks(Location):
     print("Construction Worker: Move yo ass out a here n***a!")
     print("------------------------------")
     input("Press enter.")
+  #laad plaatjes en muziek
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]

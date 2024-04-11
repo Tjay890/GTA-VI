@@ -10,14 +10,16 @@ class Barber(Location):
   def enter(self):
     print("You are going inside.")
     player.hair = self.hairstyle()
-
+  #als je de barber binnekomt
   def hairstyle(self):
     print("Do want a haircut ma G?\nYou aint looking fresh with that",player.hair,"!")
     a = input(">")
+    #als je nee zegt
     if a.lower() == "no":
       hair = "YEYEASSHAIRCUT"
       print("Yo hairstyle is now", hair, "N***a!")
       return hair
+      #als je iets anders typed
     else:
       print("Wich haircut do you want ma n***a!")
       print("You can chose between these 5 n***a!")
@@ -33,6 +35,7 @@ class Barber(Location):
         hair = str(input(">"))
       print("Yo hairstyle is now", hair, "N***a!")
       print("")
+      #kijkt welk haar je kiest
       if hair.lower() == "buzz":
         self.display_image('Buzz.jpg')
       if hair.lower() == "fringe":
@@ -44,6 +47,7 @@ class Barber(Location):
       if hair.lower() == "default":
         self.display_image('Default.jpg')
       return hair
+  #laad de fotos
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]

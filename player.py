@@ -1,22 +1,24 @@
 import random
 import pygame
 
+#jouw stats
 class Stats:
   joints1 = 0
   gun1 = False
   cash = 100
   rpg1 = False
   crowbar = 0
+  #jouw levens en kracht
   def __init__(self, health = 80, power = 15):
     self.life = health
     self.damage = power
-
+  #kijkt of je levens nog niet op 0 is
   def attack(self):
     print("You got popped!")
     damage = random.randint(0, self.damage)
     print("Damage:", damage)
     player.life -= damage
-
+  
   def healthcheck(self):
     if self.life > 0:
       print("Enemy health is:", self.life)
@@ -27,7 +29,7 @@ class Stats:
 
 
 
-
+#meer stats
 class Player(Stats):
   hair = "YEYEASSHAIRCUT"
   driver = "No one"
@@ -40,14 +42,14 @@ class Player(Stats):
   def __init__(self, health = 100, power = 20):
     Stats.__init__(self, health = 80, power = 15)
 
-
+  #punch attack
   def punch(self):
     print("You did a punch attack.")
     damage = random.randint(0, self.damage)
     print("Damage:", damage)
     Boss1.life -= damage
 
-
+  #kick attack
   def kick(self):
     print("You did a kick attack.")
     if random.randint(0, 1) == 0:
@@ -57,7 +59,7 @@ class Player(Stats):
     else:
       print("Yo ass missed the kick")
 
-
+  #gun attack
   def gun(self):
     print("You choses the gun.")
     if self.gunna is True:
@@ -66,7 +68,7 @@ class Player(Stats):
       Boss1.life -= damage
     else:
       print("You have not unlocked the gun.")
-
+  #rocket launcher attack
   def rocketlauncher(self):
     print("You have chosen the ultimute rocketlauncher")
     if self.rpg is True:
@@ -77,7 +79,7 @@ class Player(Stats):
       print("You have not unlocked the rocketlauncher")
 
 
-
+  #heatlh check
   def healthcheck(self):
     if self.life > 0:
       print("your health is:", self.life)
@@ -85,7 +87,7 @@ class Player(Stats):
       print("Yoo ass is dead G!")
       pygame.quit()
 
-
+  #als je healt
   def heal(self):
     if self.joints >= 1:
       self.life += 5

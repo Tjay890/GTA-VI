@@ -14,7 +14,7 @@ mixer.music.play(-1)
 #startvariablen
 bord = pygame.image.load("Bord.jpg")
 bordrect = bord.get_rect()
-
+#maakt het scherm
 WINDOW_SIZE= [800, 800]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption("GTA VI(Leak)")
@@ -26,17 +26,9 @@ current = "House"
 WHITE = (200, 200, 200)
 WINDOW_HEIGHT = 800
 WINDOW_WIDTH = 800
-
+#laad het hoofd in
 player_image = pygame.image.load("Head.jpg")
 player_rect = player_image.get_rect()
-
-
-def drawGrid():
-  blockSize = 20 #Set the size of the grid block
-  for x in range(0, WINDOW_WIDTH, blockSize):
-    for y in range(0, WINDOW_HEIGHT, blockSize):
-      rect = pygame.Rect(x, y, blockSize, blockSize)
-      pygame.draw.rect(screen, WHITE, rect, 1)
 
 while not done:
   player_x = wereld.world[current].x

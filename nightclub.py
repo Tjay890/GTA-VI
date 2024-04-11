@@ -4,17 +4,17 @@ from location import Location
 class Nightclub(Location):
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
-
+  #Zorgt dat je naar binnen kan
   def enter(self):
     self.inside()
-
+  #wanneer je de nightclub ingaat
   def inside(self):
     print('You are in the nightclub')
     self.play_sound('nightclub.mp3')
     self.display_image('nightclub.jpeg')
     print('You took too much drugs and died')
     pygame.quit()
-
+  #laad plaatje
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]
@@ -25,7 +25,7 @@ class Nightclub(Location):
     pygame.time.delay(10000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
-
+  #laad muziek
   @staticmethod
   def play_sound(sound_name):
     pygame.init()

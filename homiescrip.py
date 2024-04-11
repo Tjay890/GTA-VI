@@ -11,6 +11,7 @@ class Crip(Location):
     print("Tyrone: Yo wazzap homie.\nYou want to buy something?")
     print("Tyrone: ive got guns and joints")
     print("Tyrone: What do you want to buy:\n1. Guns\n2. Joints\n3. Nothing")
+    #kies wat je wilt kopen
     choise = input()
     if choise == '1':
       self.gunna()
@@ -19,6 +20,7 @@ class Crip(Location):
     else:
       print("Aight i get it man. Money doesn't fall out the sky you know.")
       print("The same is with beautiful, big-titty, butt-naked women you know.")
+  #regelt de shit die je koopt
   def gunna(self):
     print("Tyrone: I've got 2 guns:")
     print("1. Normal gun, 10k cash, 15-30 damage")

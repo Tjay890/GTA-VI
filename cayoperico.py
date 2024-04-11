@@ -8,11 +8,11 @@ from player import *
 class Cayo(Location):
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
-
+  #wanneer je de cayo binnen komt
   def enter(self):
     print("You are going to enter the Bossbattle against El Rubio!")
     self.storyline()
-    
+  #story
   def storyline(self):
     print("El Rubio: ZzZzZzZzZz, ZzZzzZ")
     print("El Rubio: uhhh, who da f* are you man.")
@@ -24,7 +24,7 @@ class Cayo(Location):
     print("===========================")
     self.bossbattle()
 
-  
+  #jouw attacks
   def bossbattle(self):
     while player.life >= 0 and Boss1.life >= 0:
       print("chose your Attack")
@@ -46,7 +46,7 @@ class Cayo(Location):
         player.heal()
       else:
         print("You can not do that.")
-    
+      #laat de status van jouw levens en die van de boss zien
       print("----------------------")
       Boss1.healthcheck()
       player.healthcheck()
@@ -55,7 +55,7 @@ class Cayo(Location):
         Boss1.attack()
         player.healthcheck()
         print("----------------------")
-    
+    #als 1 van de 2 dood is
     if Boss1.life > 0:
       print("El Rubio has won with ", Boss1.life, "lifes.")
     else:

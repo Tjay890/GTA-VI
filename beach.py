@@ -8,7 +8,7 @@ class Beach(Location):
   girl = 'no bitches'
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
         super().__init__(name, up, right, down, left, xcoord, ycoord)
-
+  #wanner je het strand op loopt
   def enter(self):
     print("You are walking to the beach.")
     self.girl = self.hairtype()
@@ -16,10 +16,12 @@ class Beach(Location):
     print("Do want some bitches on your slonggadong ma G?")
     print("You aint looking good with", self.girl, "!")
     a = input(">")
+    #wanner je nee zegt
     if a.lower() == "no":
       girl = "no bitches"
       print("Your girl is now", girl, "N***a!")
       return girl
+    #als je iets anders zegt
     else:
       print("Wich girl do you want ma g!")
       print("You can chose between these 5 g")
@@ -36,6 +38,7 @@ class Beach(Location):
         girl = str(input(">"))
         print("Your girl is now", girl, "N***a!")
         print("")
+      #checkt welke girl je hebt gekozen
       if girl == "Bald":
         if player.hair == "Bald":
           self.display_image('Bald.jpg')
@@ -58,6 +61,7 @@ class Beach(Location):
       elif girl == "Blacka":
         self.display_image('Blacka.jpg')
       return girl
+  #laad fotos
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]
@@ -68,6 +72,7 @@ class Beach(Location):
     pygame.time.delay(2000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
+  #laat muziek/geluid
   @staticmethod
   def play_sound(sound_name):
     pygame.init()

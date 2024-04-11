@@ -7,6 +7,7 @@ class Location():
     self.left = left
     self.x = xcoord
     self.y = ycoord
+  #laat zien wat de speler kan doen
   def printdirections(self):
     print("You are currently at " + self.name)
     print()
