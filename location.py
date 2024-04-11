@@ -9,6 +9,8 @@ class Location():
     self.y = ycoord
   def printdirections(self):
     print("You are currently at " + self.name)
+    print()
+    print("You can view your inventory by pressing [I],")
     print("You can enter this place by pressing [ENTER] or,")
     print("You can go:\n", "Up:",self.up,"\n","Right:",self.right,"\n","Down:",self.down,"\n","Left:",self.left)
   def enter(self):

@@ -9,6 +9,7 @@ from docks import *
 from freakshop import *
 from homiescrip import *
 from nightclub import *
+from player import *
 
 current = "House"
 world = {
@@ -46,7 +47,30 @@ def move(current):
       current = objHere.left
   elif direction == keys.ENTER:
     objHere.enter()
+  elif direction == keys.I:
+    if player.ticket is False:
+      print("You dont have a ticket to cayo perico.")     
+    elif player.ticket is True:
+      print("You have a ticket to cayo perico.")
+    else:
+      print("Something is wrong here")
+    print("You have",player.joints,"joints and",player.cash,"cash")
+    if player.gunna is True:
+      print("You have a gun.")
+    else:
+      print("You dont have a gun")
+    if player.rpg is True:
+      print("You have a RPG")
+    else:
+      print("You dont have a RPG")
+    print()
   else:
     print("You can't go there!")
+  if current == "Cayo perico" and player.ticket is False:
+    print("You haven't unlocked this area yet.")
+    print("Buy a ticket at the airport and then you can come back to cayo perico.")
+    print()
+    current = "Airport"
+    
   return current
 

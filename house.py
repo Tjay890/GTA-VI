@@ -14,9 +14,13 @@ class House(Location):
       player.cash = 100
       print("Your money is now 100")
       input("Press enter")
+    elif player.freejoints is False:
+      print("Looks like grandma left some joints for you")
+      player.joints += 5
+      print("You now have",player.joints,"joints.")
+      input("Press enter")
+      player.freejoints = True
     else:
-      print("Looks like grandma left some cookies for you")
-      player.cookies1 += 5
-      print("You now have",player.cookies1,"cookies.")
+      print("There is nothing to do here")
       input("Press enter")
       

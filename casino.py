@@ -9,8 +9,9 @@ class Casino_games():
   def pinapparaat():
     print("This is the secret ATM you can withdraw any amount of money you want")
     print("You have", player.cash,"money.")
-    extra = int(input("How much money do you want?"))
+    extra = int(input("How much money do you want?\n"))
     player.cash += extra
+    print("You now have",player.cash,"cash")
   
   @staticmethod
   #Kop of munt minigame
@@ -68,22 +69,22 @@ class Casino_games():
 
         if player.cash > 0 and menuChoice != 7: #Determine if quit or broke
             if menuChoice == 6:
-                number = int(input('Please choose a number from 0-36!')) #Get their specific number
+                number = int(input('Please choose a number from 0-36!\n')) #Get their specific number
                 while number < 0 or number > 36: #Validation
-                    number = int(input('Please enter a number from 0-36'))
+                    number = int(input('Please enter a number from 0-36\n'))
 
 
-            wager = int(input('How much would you like to bet? '))
+            wager = int(input('How much would you like to bet?\n'))
             #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             while wager > player.cash:
               print("You dont have that much money.")
-              wager = int(input("How much would you like to bet?"))
+              wager = int(input("How much would you like to bet?\n"))
               
               
               
             print('Press any key to spin the wheel! ')
             input()
-            print(menuChoice, wager)
+            print("You chose: "+str(menuChoice)+",and bet:",wager)
     ##
             ball = random.randint(0,36)
 
@@ -154,9 +155,11 @@ class Casino_games():
 
 
         else:
+          if player.cash > 0:
             print('Thank you for playing! ')
             exit = True
-  
+          else:
+            print("You dont have any money.\nPlease come back when you have money.")
   @staticmethod
   #binnenkomst bij casino
   def entrance():
@@ -174,20 +177,29 @@ class Casino_games():
       3. Exit.
       """)
       
-      choise = input("Choose your game. (press 1 or 2)\n")
+      choise = input("Choose your game. (press 1, 2 or 3)\n")
       #check welke minigame je gaat doen
-      if choise == "1":
-        Casino_games.coinflip()
-      elif choise == "2":
-        Casino_games.roulette()
-      elif choise == "3":
-        exit = True
-        print("You are going outside.")
-      elif choise == "69420":
+      if player.cash <=0:
+        print("Looks like you have got no cash, get the fuck outa here you broke N***a!")
+      elif player.cash <= 0 and choise =="69420":
+        print("Looks like you need some money.")
+        print("Luckily this is a ATM")
         Casino_games.pinapparaat()
       else:
-        print("That is not a game")
-      
+        if choise == "1":
+          Casino_games.coinflip()
+        elif choise == "2":
+          Casino_games.roulette()
+        elif choise == "3":
+          exit = True
+          print("You are going outside.")
+        elif choise == "69420":
+          Casino_games.pinapparaat()
+          exit = True
+        else:
+          print("That is not a game")
+        
+        
   
   
 class Casino(Location):

@@ -1,10 +1,10 @@
 import random
 
 class Stats:
-  cookies1 = 0
-  gun1 = 0
+  joints1 = 0
+  gun1 = False
   cash = 100
-  rpg1 = 0
+  rpg1 = False
   def __init__(self, health = 80, power = 15):
     self.life = health
     self.damage = power
@@ -27,10 +27,11 @@ class Stats:
 
 
 class Player(Stats):
-
-  cookies = Stats.cookies1
+  ticket = False
+  joints = Stats.joints1
   gunna = Stats.gun1
   rpg = Stats.rpg1
+  freejoints = False
   def __init__(self, health = 100, power = 20):
     Stats.__init__(self, health = 80, power = 15)
 
@@ -54,7 +55,7 @@ class Player(Stats):
 
   def gun(self):
     print("You choses the gun.")
-    if self.gunna >= 1:
+    if self.gunna is True:
       damage = random.randint(15, 30)
       print("Damage:", damage)
       Boss1.life -= damage
@@ -63,7 +64,7 @@ class Player(Stats):
 
   def rocketlauncher(self):
     print("You have chosen the ultimute rocketlauncher")
-    if self.rpg >= 1:
+    if self.rpg is True:
       damage = 1000
       print("Damage:", damage)
       Boss1.life -= damage
@@ -74,19 +75,19 @@ class Player(Stats):
 
   def healthcheck(self):
     if self.life > 0:
-      print("My health is:", self.life)
+      print("your health is:", self.life)
     else:
       print("Yoo ass is dead G!")
 
 
   def heal(self):
-    if self.cookies >= 1:
+    if self.joints >= 1:
       self.life += 5
       print("You got yo self healed")
       print("Yo health is:", self.life)
-      self.cookies -= 1
+      self.joints -= 1
     else:
-      print("Yo ass already has enough cookies man!")
+      print("Yo ass already has enough joints man!")
 
 
 player = Player()
