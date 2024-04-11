@@ -6,6 +6,7 @@ class Stats:
   gun1 = 0
   cash = 100
   rpg1 = 0
+  crowbar = 0
   def __init__(self, health = 80, power = 15):
     self.life = health
     self.damage = power
@@ -55,7 +56,7 @@ class Player(Stats):
 
   def gun(self):
     print("You choses the gun.")
-    if self.gunna >= 1:
+    if self.gun1 >= 1:
       damage = random.randint(15, 30)
       print("Damage:", damage)
       Boss1.life -= damage
@@ -64,7 +65,7 @@ class Player(Stats):
 
   def rocketlauncher(self):
     print("You have chosen the ultimute rocketlauncher")
-    if self.rpg >= 1:
+    if self.rpg1 >= 1:
       damage = 1000
       print("Damage:", damage)
       Boss1.life -= damage
@@ -82,20 +83,23 @@ class Player(Stats):
 
 
   def heal(self):
-    if self.cookies >= 1:
-      self.life += 5
+    if self.cookies1 >= 1:
+      self.life += 10
       print("You got yo self healed")
       print("Yo health is:", self.life)
-      self.cookies -= 1
+      self.cookies1 -= 1
     else:
       print("Yo ass already has enough cookies man!")
 
 
-player = Player()
+player = Player(100, 20)
 Boss1 = Stats()
 
 
 
+
+
+#in cayo perico class
 # while player.life >= 0 and Boss1.life >= 0:
 #   print("chose your strategy")
 #   print("1:punch")

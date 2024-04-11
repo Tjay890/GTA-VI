@@ -9,8 +9,11 @@ class Casino_games():
   def pinapparaat():
     print("This is the secret ATM you can withdraw any amount of money you want")
     print("You have", player.cash,"money.")
-    extra = int(input("How much money do you want?"))
-    player.cash += extra
+    extra = input("How much money do you want?\n")
+    if extra.isdigit():
+      player.cash += int(extra)
+    else:
+      print("You ain't getting that shit!")
   
   @staticmethod
   #Kop of munt minigame

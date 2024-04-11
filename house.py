@@ -13,10 +13,10 @@ class House(Location):
       print("Here is some money")
       player.cash = 100
       print("Your money is now 100")
-      input("Press enter")
+      input("Press enter to leave")
     else:
       print("Looks like grandma left some cookies for you")
       player.cookies1 += 5
       print("You now have",player.cookies1,"cookies.")
-      input("Press enter")
+      input("Press enter to leave")
       
