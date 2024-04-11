@@ -1,10 +1,12 @@
 import random
+import pygame
 
 class Stats:
   joints1 = 0
   gun1 = False
   cash = 100
   rpg1 = False
+  crowbar = 0
   def __init__(self, health = 80, power = 15):
     self.life = health
     self.damage = power
@@ -78,6 +80,7 @@ class Player(Stats):
       print("your health is:", self.life)
     else:
       print("Yoo ass is dead G!")
+      pygame.quit()
 
 
   def heal(self):
@@ -90,11 +93,14 @@ class Player(Stats):
       print("Yo ass already has enough joints man!")
 
 
-player = Player()
+player = Player(100, 20)
 Boss1 = Stats()
 
 
 
+
+
+#in cayo perico class
 # while player.life >= 0 and Boss1.life >= 0:
 #   print("chose your strategy")
 #   print("1:punch")

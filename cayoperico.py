@@ -11,9 +11,20 @@ class Cayo(Location):
 
   def enter(self):
     print("You are going to enter the Bossbattle against El Rubio!")
-    self.bossbattle()
+    self.storyline()
     
+  def storyline(self):
+    print("El Rubio: ZzZzZzZzZz, ZzZzzZ")
+    print("El Rubio: uhhh, who da f* are you man.")
+    naam = input(">")
+    print("El Rubio: Uhmmm, I know yo ass," + naam)
+    print(naam + ":You sure you know me?")
+    print(naam+":I whoope yo ass man")
+    print("El Rubio: We will see!")
+    print("===========================")
+    self.bossbattle()
 
+  
   def bossbattle(self):
     while player.life >= 0 and Boss1.life >= 0:
       print("chose your Attack")
@@ -49,5 +60,5 @@ class Cayo(Location):
       print("El Rubio has won with ", Boss1.life, "lifes.")
     else:
       print(" Demarcus has won with ", player.life, "lifes.")
-      player.cash += 500
-      print(player.cash)
+      player.cash += 5000
+      print("Your cash is now:", player.cash)

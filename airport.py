@@ -31,5 +31,3 @@ class Airport(Location):
     print("You are going inside.")
     print()
     player.ticket = self.ticketbooth()
-  
-
