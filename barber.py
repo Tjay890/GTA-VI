@@ -21,10 +21,10 @@ class Barber(Location):
     else:
       print("Wich haircut do you want ma n***a!")
       print("You can chose between these 5 n***a!")
-      print("Buzz, Fringe, Mullet, Bold or Default")
+      print("Buzz, Fringe, Mullet, Bald or Default")
       hair = str(input(">"))
       while (hair != "Buzz" and hair != "Fringe" and hair != "Mullet"
-             and hair != "Bold" and hair != "Default"):
+             and hair != "Bald" and hair != "Default"):
         print("You cannot chose that n***a !\nChoose again!")
         print("")
         print("Wich haircut do you want ma n***a!")
@@ -33,15 +33,15 @@ class Barber(Location):
         hair = str(input(">"))
       print("Yo hairstyle is now", hair, "N***a!")
       print("")
-      if hair == "Buzz":
+      if hair.lower() == "buzz":
         self.display_image('Buzz.jpg')
-      if hair == "Fringe":
+      if hair.lower() == "fringe":
         self.display_image('Fringe.jpg')
-      if hair == "Mullet":
+      if hair.lower() == "mullet":
         self.display_image('Mullet.jpg')
-      if hair == "Bold":
+      if hair.lower() == "bald":
         self.display_image('Bold.jpg')
-      if hair == "Default":
+      if hair.lower() == "default":
         self.display_image('Default.jpg')
       return hair
   @staticmethod

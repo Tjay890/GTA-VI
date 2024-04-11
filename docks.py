@@ -10,6 +10,7 @@ class Docks(Location):
 
   def enter(self):
     print("Press enter to enter the Docks!")
+    input()
     self.check()
 
 
@@ -87,3 +88,4 @@ class Docks(Location):
   def dockies(self):
     print("Construction Worker: Move yo ass out a here n***a!")
     print("------------------------------")
+    input("Press enter.")

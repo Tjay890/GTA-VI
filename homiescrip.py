@@ -23,6 +23,7 @@ class Crip(Location):
     print("Tyrone: I've got 2 guns:")
     print("1. Normal gun, 10k cash, 15-30 damage")
     print("2. RPG, 1m cash, 1000 damage")
+    print("You currently have", player.cash, "cash.")
     gun = input("Tyrone: Which gun do you want to buy (1, 2, 3(none))\n")
     if gun == "1" and player.gunna is True or player.rpg is True and gun =="2":
       print("Tyrone: You've already got that")
@@ -31,11 +32,13 @@ class Crip(Location):
       player.gunna = True
       print("Tyrone: You now have a Normal gun.")
       print("Tyrone: Good luck and have some fun with it.")
+      print("You now have", player.cash, "cash.")
     elif gun == "2" and player.cash >= 1000000:
       player.cash -=1000000
       player.rpg = True
       print("Tyrone: You now have a RPG gun.")
       print("Tyrone: Good luck and have some fun with it.")
+      print("You now have", player.cash, "cash.")
     elif gun == "3":
       print("Tyrone: No problem homie.")
     else:

@@ -1,12 +1,12 @@
+#importeert de zooi die je nodig hebt
 import wereld
 import pygame
 from pygame import mixer
-
 from pygame.constants import KEYDOWN
 
 #game door Maarten, Jonathan en Tije
+#Start pygame en het geluid op
 pygame.init()
-
 mixer.init()
 mixer.music.load('Music.mp3')
 mixer.music.play(-1)
@@ -21,7 +21,6 @@ pygame.display.set_caption("GTA VI(Leak)")
 done = False
 clock= pygame.time.Clock()
 
-hair = "Default"
 current = "House"
 
 WHITE = (200, 200, 200)

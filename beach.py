@@ -25,8 +25,8 @@ class Beach(Location):
       print("You can chose between these 5 g")
       print("Bald, Blonde, Brunette, Asian or Blacka")
       girl = str(input(">"))
-      while (girl != "Bald" and girl != "Blonde" and girl != "Brunette"
-      and girl != "Asian" and girl != "Blacka"):
+      while (girl.lower() != "bald" and girl != "blonde" and girl != "brunette"
+      and girl != "asian" and girl != "blacka"):
         print('Do you like man or som N***a?')
         print('That was not an option')
         print("")
@@ -37,11 +37,11 @@ class Beach(Location):
         print("Your girl is now", girl, "N***a!")
         print("")
       if girl == "Bald":
-        if player.hair == "Bold":
+        if player.hair == "Bald":
           self.display_image('Bald.jpg')
           print("You unlocked the crowbar!")
           player.crowbar = 1
-          #player.inventory.append("crowbar")
+          player.inventory.append("crowbar")
         else:
           print("You need yo ass to be bald my guy!")
       elif girl == "Blonde":
