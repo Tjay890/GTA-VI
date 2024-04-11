@@ -1,5 +1,9 @@
+from os import error
 import pygame
 from location import *
+from player import *
+from barber import *
+
 class Beach(Location):
   girl = 'no bitches'
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
@@ -32,8 +36,11 @@ class Beach(Location):
         girl = str(input(">"))
         print("Your girl is now", girl, "N***a!")
         print("")
-      if girl == "Bald":
+      if girl == "Bald" and hair == "Bold":
         self.display_image('Bald.jpg')
+        print("You unlocked the crowbar!")
+        player.crowbar = 1
+        player.inventory.append("crowbar")
       elif girl == "Blonde":
         self.display_image('Blonde.jpg')
       elif girl == "Brunette":
