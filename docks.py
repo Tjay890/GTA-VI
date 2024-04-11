@@ -1,4 +1,5 @@
 import random
+import pygame
 from location import *
 from player import *
 from freakshop import *
@@ -51,6 +52,13 @@ class Docks(Location):
       self.policechase()
     elif self.container == self.chineescontainer:
       print("oh oh, you got the Asain girl again, fuck.")
+      self.display_image('Asian.jpg')
+      self.play_sound('Indian.mp3')
+      self.display_image('Indian.jpg')
+      print('It was a man and he f*cked you in the ass')
+      print('You died')
+      pygame.quit()
+      
     else:
       print("Shit, the container is empty, get yo ass in the car.")
       self.policechase()
@@ -83,9 +91,28 @@ class Docks(Location):
       print("Mo got away with all the cash, yo ass got robbed N***a.")
     else:
       print("Yo ass got catched by the police man.\n Maybe a better driver next time!")
+      pygame.quit()
     
 
   def dockies(self):
     print("Construction Worker: Move yo ass out a here n***a!")
     print("------------------------------")
     input("Press enter.")
+  @staticmethod
+  def display_image(image_name):
+    WINDOW_SIZE = [800, 800]
+    screen = pygame.display.set_mode(WINDOW_SIZE)
+    Cut = pygame.image.load(image_name).convert()
+    screen.blit(Cut, (0, 0))
+    pygame.display.flip()
+    pygame.time.delay(2000)
+    screen.blit(screen, (0, 0))
+    pygame.display.flip()
+  @staticmethod
+  def play_sound(sound_name):
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(sound_name)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+      pygame.time.Clock().tick(10)
