@@ -10,16 +10,16 @@ class Docks(Location):
 
 
   def enter(self):
-    print("Press enter to enter the Docks!")
+    print("You are going to the Docks!(Press enter)")
     input()
     self.check()
 
   #wanneer je binnekomt
   def check(self):
     if player.crowbar == 1:
-      print("You wanna do the heist ma guy?")
+      print("You wanna do the heist ma guy?(y/n)")
       antwoord = input(">")
-      if antwoord.lower() == "yes":
+      if antwoord.lower() == "y":
         self.docksheist()
       else:
         self.dockies()

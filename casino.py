@@ -10,6 +10,7 @@ class Casino_games():
     print("This is the secret ATM you can withdraw any amount of money you want")
     print("You have", player.cash,"money.")
     extra = input("How much money do you want?\n")
+    #checkt of wat je invult niet random poep is
     if extra.isdigit():
       player.cash += int(extra)
       print("You now have",player.cash,"cash")
@@ -58,7 +59,7 @@ class Casino_games():
   def roulette():
     exit = False
     while exit is False:  
-        print('Place your bet! ',player.cash,'bucks!', '''
+        print("Place your bet! You've got",player.cash,'cash!', '''
     =======================================
     1. Bet on Red (pays 1:1)
     2. Bet on Black (pays 1:1)
@@ -68,9 +69,23 @@ class Casino_games():
     6. Choose any number (pays 35:1)
     7. Cash out
     Please enter your choice: ''')
-        menuChoice = int(input())
+        choice = input()
+        while choice.isdigit() is False:
+          print("That is not a good valid choise, choose again")
+          print("Place your bet! You've got",player.cash,'cash!', '''
+    =======================================
+    1. Bet on Red (pays 1:1)
+    2. Bet on Black (pays 1:1)
+    3. First 12 (pays 2:1)
+    4. Middle 12 (pays 2:1)
+    5. Last 12 (pays 2:1)
+    6. Choose any number (pays 35:1)
+    7. Cash out
+    Please enter your choice: ''')
+          choice = input()
+        
         #Add validation!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+        menuChoice = int(choice)
         if player.cash > 0 and menuChoice != 7: #Determine if quit or broke
             if menuChoice == 6:
                 number = int(input('Please choose a number from 0-36!\n')) #Get their specific number
@@ -164,6 +179,7 @@ class Casino_games():
             exit = True
           else:
             print("You dont have any money.\nPlease come back when you have money.")
+            exit = True
   @staticmethod
   #binnenkomst bij casino
   def entrance():
@@ -183,12 +199,17 @@ class Casino_games():
       
       choise = input("Choose your game. (press 1, 2 or 3)\n")
       #check welke minigame je gaat doen
-      if player.cash <=0:
-        print("Looks like you have got no cash, get the fuck outa here you broke N***a!")
-      elif player.cash <= 0 and choise =="69420":
+      
+      
+      #als je geen geld hebt maar wel wil pinnen
+      if player.cash <= 0 and choise =="69420":
         print("Looks like you need some money.")
         print("Luckily this is a ATM")
         Casino_games.pinapparaat()
+      #normale keuze menu als je gewoon geld hebt
+      #Als je geen cash hebt
+      elif player.cash <=0:
+        print("Looks like you have got no cash, get the fuck outa here you broke N***a!")
       else:
         if choise == "1":
           Casino_games.coinflip()

@@ -15,5 +15,6 @@ class Location():
     print("You can enter this place by pressing [ENTER] or,")
     print("You can go:\n", "Up:",self.up,"\n","Right:",self.right,"\n","Down:",self.down,"\n","Left:",self.left)
   def enter(self):
-    print("There is nothing to do here.")
+    print("There is nothing to do here.(Press enter)")
+    input()
   

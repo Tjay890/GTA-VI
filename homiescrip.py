@@ -5,7 +5,8 @@ class Crip(Location):
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
   def enter(self):
-    print("You are going inside.")
+    print("You are going inside.(Press enter)")
+    input()
     self.homie()
   def homie(self):
     print("Tyrone: Yo wazzap homie.\nYou want to buy something?")

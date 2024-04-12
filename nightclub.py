@@ -6,6 +6,8 @@ class Nightclub(Location):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
   #Zorgt dat je naar binnen kan
   def enter(self):
+    print("You are going inside the nightclub.(Press enter)")
+    input()
     self.inside()
   #wanneer je de nightclub ingaat
   def inside(self):

@@ -10,7 +10,7 @@ class Freakshop(Location):
   
   def enter(self):
     #zorgt ervoor dat je naar binnen gaat
-    print("Press enter to enter the freakshop!")
+    print("You are going inside the freakshop!(Press enter)")
     input()
     self.story()
   

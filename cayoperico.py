@@ -10,7 +10,8 @@ class Cayo(Location):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
   #wanneer je de cayo binnen komt
   def enter(self):
-    print("You are going to enter the Bossbattle against El Rubio!")
+    print("You are going to enter the Bossbattle against El Rubio!(Press enter)")
+    input()
     self.storyline()
   #story
   def storyline(self):

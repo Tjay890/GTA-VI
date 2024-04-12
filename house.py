@@ -4,6 +4,8 @@ class House(Location):
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
   def enter(self):
+    print("You are going inside.(Press enter)")
+    input()
     self.inside()
   @staticmethod
   #wanner je binnen bent

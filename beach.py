@@ -6,11 +6,13 @@ from barber import *
 
 class Beach(Location):
   girl = 'no bitches'
+  girls = ["bald","blonde","brunette","asian","blacka"]
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
         super().__init__(name, up, right, down, left, xcoord, ycoord)
   #wanner je het strand op loopt
   def enter(self):
-    print("You are walking to the beach.")
+    print("You are walking to the beach.(Press enter)")
+    input()
     self.girl = self.hairtype()
   def hairtype(self):
     print("Do want some bitches on your slonggadong ma G?")
@@ -27,8 +29,8 @@ class Beach(Location):
       print("You can chose between these 5 g")
       print("Bald, Blonde, Brunette, Asian or Blacka")
       girl = str(input(">"))
-      while (girl.lower() != "bald" and girl != "blonde" and girl != "brunette"
-      and girl != "asian" and girl != "blacka"):
+      #checkt of je de goeie girl hebt getypt
+      while girl.lower() not in self.girls:
         print('Do you like man or som N***a?')
         print('That was not an option')
         print("")
@@ -39,7 +41,7 @@ class Beach(Location):
         print("Your girl is now", girl, "N***a!")
         print("")
       #checkt welke girl je hebt gekozen
-      if girl == "Bald":
+      if girl.lower() == "Bald":
         if player.hair == "Bald":
           self.display_image('Bald.jpg')
           print("You unlocked the crowbar!")
@@ -47,21 +49,21 @@ class Beach(Location):
           player.inventory.append("crowbar")
         else:
           print("You need yo ass to be bald my guy!")
-      elif girl == "Blonde":
+      elif girl.lower() == "Blonde":
         self.display_image('Blonde.jpg')
-      elif girl == "Brunette":
+      elif girl.lower() == "Brunette":
         self.display_image('Brunette.jpg')
-      elif girl == "Asian":
+      elif girl.lower() == "Asian":
         self.display_image('Asian.jpg')
         self.play_sound('Indian.mp3')
         self.display_image('Indian.jpg')
         print('It was a man and he f*cked you in the ass')
         print('You died')
         pygame.quit()
-      elif girl == "Blacka":
+      elif girl.lower() == "Blacka":
         self.display_image('Blacka.jpg')
       return girl
-  #laad fotos
+  #laadt fotos
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]

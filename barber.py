@@ -4,11 +4,13 @@ from player import *
 
 class Barber(Location):
   player.hair = "YEYEASSHAIRCUT"
+  haircuts = ["buzz","fringe", "mullet", "bald", "default"]
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
     super().__init__(name, up, right, down, left, xcoord, ycoord)
     
   def enter(self):
-    print("You are going inside.")
+    print("You are going inside.(Press enter)")
+    input()
     player.hair = self.hairstyle()
   #als je de barber binnekomt
   def hairstyle(self):
@@ -19,14 +21,14 @@ class Barber(Location):
       hair = "YEYEASSHAIRCUT"
       print("Yo hairstyle is now", hair, "N***a!")
       return hair
-      #als je iets anders typed
+    #als je iets anders typed
     else:
       print("Wich haircut do you want ma n***a!")
       print("You can chose between these 5 n***a!")
       print("Buzz, Fringe, Mullet, Bald or Default")
       hair = str(input(">"))
-      while (hair != "Buzz" and hair != "Fringe" and hair != "Mullet"
-             and hair != "Bald" and hair != "Default"):
+      #zorgt dat je wel een echt kapsel in vult
+      while (hair not in self.haircuts):
         print("You cannot chose that n***a !\nChoose again!")
         print("")
         print("Wich haircut do you want ma n***a!")
@@ -47,7 +49,7 @@ class Barber(Location):
       if hair.lower() == "default":
         self.display_image('Default.jpg')
       return hair
-  #laad de fotos
+  #laadt de fotos
   @staticmethod
   def display_image(image_name):
     WINDOW_SIZE = [800, 800]
@@ -58,6 +60,3 @@ class Barber(Location):
     pygame.time.delay(2000)
     screen.blit(screen, (0, 0))
     pygame.display.flip()
-
-
-

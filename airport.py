@@ -14,7 +14,7 @@ class Airport(Location):
     print("A ticket is 1000 cash.")
     shop = input("Would you like to buy a ticket?(y/n)\n")
     print()
-    #als je genoeg geld hebt
+    #als je genoeg geld hebt en y typt
     if shop== "y" and player.cash >= 1000:
       player.cash -= 1000
       ticket = True
@@ -26,12 +26,12 @@ class Airport(Location):
       print("You dont have enough money.")
       print("Come back once you have filled yo pockets.")
       ticket = False
-      #als je n typet
+    #als je n typet
     else:
       print("Aight, come back when you have changed yo mind")
       ticket = False
     return ticket
   def enter(self):
-    print("You are going inside.")
-    print()
+    print("You are going inside.(Press enter)")
+    input()
     player.ticket = self.ticketbooth()
