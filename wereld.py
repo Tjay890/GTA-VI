@@ -79,6 +79,7 @@ def move(current):
       print("You have no driver.")
     else:
       print("Your driver is", player.driver)
+    print("Your girl is", player.girl)
     #checkt je ticket voor cayo perico
     if player.ticket is False:
       print("You dont have a ticket to cayo perico.")     

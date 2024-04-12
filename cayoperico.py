@@ -27,6 +27,8 @@ class Cayo(Location):
 
   #jouw attacks
   def bossbattle(self):
+    player.life = 80
+    Boss1.life = 80
     while player.life >= 0 and Boss1.life >= 0:
       print("chose your Attack")
       print("1:punch")

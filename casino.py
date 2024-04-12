@@ -190,7 +190,7 @@ class Casino_games():
     while exit is False:
       
       print("you have", player.cash, "cash")
-      print("You have 1 game you can play.")
+      print("You have 2 games you can play.")
       print("""Our current games that are available are:
       1. Heads or Tails.
       2. Roulette.
