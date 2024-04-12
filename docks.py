@@ -34,7 +34,7 @@ class Docks(Location):
     print("------------------------------")
     print("Construction Worker: Move yo ass out a here n***a!")
     print("No one: I wouldn't let that slide man!")
-    aap = input("Whats yo answere:")
+    aap = input("Whats yo answere:\n")
     print("Shut up I'll wett you mate.",aap)
     print("------------------------------")
     self.containerplukken()

@@ -20,6 +20,17 @@ class Freakshop(Location):
     if player.crowbar >= 1 and player.driver != 'No one':
       print("Pablo: So you got the crowbar.\n Go to the docks and open a container.")
       print("Pablo: Yo driver will wait there with the getaway car.")
+      print("Pablo: Or would you like to change driver?(y/n)")
+      keus = input(">")
+      if keus == "y":
+        self.chosing()
+      else:
+        if player.driver == "1":
+          print("Pablo: I get it. I would also trust in Rashid.")
+        elif player.driver == "2":
+          print("Pablo: I get it. I would also trust in Mo.")
+        else:
+          print("Pablo: I get it. I would also trust in Jayquavion")
       print("---------------------------------")
     elif player.crowbar >= 1:
       print("Pablo: Looks like you have got a crowbar.")
