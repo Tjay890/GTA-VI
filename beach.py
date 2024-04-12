@@ -5,7 +5,6 @@ from player import *
 from barber import *
 
 class Beach(Location):
-  girl = 'no bitches'
   girls = ["bald","blonde","brunette","asian","blacka"]
   def __init__(self, name, up, right, down, left, xcoord, ycoord):
         super().__init__(name, up, right, down, left, xcoord, ycoord)
@@ -13,10 +12,10 @@ class Beach(Location):
   def enter(self):
     print("You are walking to the beach.(Press enter)")
     input()
-    self.girl = self.hairtype()
+    player.girl = self.hairtype()
   def hairtype(self):
     print("Do want some bitches on your slonggadong ma G?")
-    print("You aint looking good with", self.girl, "!")
+    print("You aint looking good with", player.girl, "!")
     a = input(">")
     #wanner je nee zegt
     if a.lower() == "no":
@@ -41,26 +40,26 @@ class Beach(Location):
         print("Your girl is now", girl, "N***a!")
         print("")
       #checkt welke girl je hebt gekozen
-      if girl.lower() == "Bald":
-        if player.hair == "Bald":
+      if girl.lower() == "bald":
+        if player.hair == "bald":
           self.display_image('Bald.jpg')
           print("You unlocked the crowbar!")
           player.crowbar = 1
           player.inventory.append("crowbar")
         else:
           print("You need yo ass to be bald my guy!")
-      elif girl.lower() == "Blonde":
+      elif girl.lower() == "blonde":
         self.display_image('Blonde.jpg')
-      elif girl.lower() == "Brunette":
+      elif girl.lower() == "brunette":
         self.display_image('Brunette.jpg')
-      elif girl.lower() == "Asian":
+      elif girl.lower() == "asian":
         self.display_image('Asian.jpg')
         self.play_sound('Indian.mp3')
         self.display_image('Indian.jpg')
         print('It was a man and he f*cked you in the ass')
         print('You died')
         pygame.quit()
-      elif girl.lower() == "Blacka":
+      elif girl.lower() == "blacka":
         self.display_image('Blacka.jpg')
       return girl
   #laadt fotos

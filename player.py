@@ -38,6 +38,7 @@ class Player(Stats):
   gunna = Stats.gun1
   rpg = Stats.rpg1
   freejoints = False
+  girl = "no bitches"
   inventory = []
   def __init__(self, health = 100, power = 20):
     Stats.__init__(self, health = 80, power = 15)

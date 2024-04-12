@@ -28,7 +28,7 @@ class Barber(Location):
       print("Buzz, Fringe, Mullet, Bald or Default")
       hair = str(input(">"))
       #zorgt dat je wel een echt kapsel in vult
-      while (hair not in self.haircuts):
+      while (hair.lower() not in self.haircuts):
         print("You cannot chose that n***a !\nChoose again!")
         print("")
         print("Wich haircut do you want ma n***a!")

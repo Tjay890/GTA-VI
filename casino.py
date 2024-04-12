@@ -210,6 +210,7 @@ class Casino_games():
       #Als je geen cash hebt
       elif player.cash <=0:
         print("Looks like you have got no cash, get the fuck outa here you broke N***a!")
+        exit = True
       else:
         if choise == "1":
           Casino_games.coinflip()
