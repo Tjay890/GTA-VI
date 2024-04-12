@@ -221,7 +221,6 @@ class Casino_games():
           print("You are going outside.")
         elif choise == "69420":
           Casino_games.pinapparaat()
-          exit = True
         else:
           print("That is not a game")
         
